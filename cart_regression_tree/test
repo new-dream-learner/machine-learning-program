@@ -1,0 +1,10 @@
+def loadDataSet(fileName):      #general function to parse tab -delimited floats
+    dataMat = []                #assume last column is target value
+    fr = open(fileName)
+    for line in fr.readlines():
+        curLine = line.strip().split('\t')
+        fltLine = map(float,curLine)  #每行数据映射为浮点数      #map all elements to float()
+        dataMat.append(fltLine)
+    return dataMat
+mat=loadDataSet('ex00.txt')
+print(mat)
